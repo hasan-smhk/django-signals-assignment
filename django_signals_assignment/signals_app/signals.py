@@ -1,0 +1,23 @@
+import threading
+import time
+
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+from .models import Student
+
+
+@receiver(post_save, sender=Student)
+def student_saved(sender, instance, **kwargs):
+
+    print("=" * 60)
+    print("Signal Started")
+
+    print("Signal Thread ID :", threading.get_ident())
+
+    print("Sleeping for 5 seconds...")
+    time.sleep(5)
+
+    print("Signal Finished")
+
+    print("=" * 60)
