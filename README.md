@@ -48,3 +48,27 @@ http://127.0.0.1:8000/sync/
 and
 
 http://127.0.0.1:8000/transaction/
+
+
+**
+Topic: Custom Classes in Python**
+
+class Rectangle:
+    def __init__(self, length: int, width: int):
+        self.length = length
+        self.width = width
+
+    def __iter__(self):
+        yield {"length": self.length}
+        yield {"width": self.width}
+
+
+# Example usage
+rectangle = Rectangle(10, 5)
+
+for item in rectangle:
+    print(item)
+    
+Output
+{'length': 10}
+{'width': 5}
