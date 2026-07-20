@@ -54,6 +54,7 @@ http://127.0.0.1:8000/transaction/
 Topic: Custom Classes in Python**
 
 class Rectangle:
+
     def __init__(self, length: int, width: int):
         self.length = length
         self.width = width
